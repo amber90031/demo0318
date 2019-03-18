@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onChange($event) {
-    alert('您輸入的關鍵字為：' + this.keyword);
+    // alert('您輸入的關鍵字為：' + this.keyword);
   }
 
   HighLight($event) {

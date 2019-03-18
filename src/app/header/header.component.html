@@ -27,7 +27,11 @@
       <i class="ion-search"></i> HighLight和放大
     </button>
     <br />
-    目前的輸入關鍵字為：{{ keyword }}
-    <span *ngIf="!keyword" class="highlight">請輸入查詢條件</span>
+    <ng-template #DisplayKeyword>
+      目前的輸入關鍵字為：{{ keyword }}
+    </ng-template>
+    <span *ngIf="!keyword; else DisplayKeyword" class="highlight"
+      >請輸入查詢條件</span
+    >
   </div>
 </nav>
