@@ -14,7 +14,7 @@
       [(ngModel)]="keyword"
       (ngModelChange)="onChange($event)"
     />
-    <button class="btn btn-sm btn-basic">
+    <button class="btn btn-sm btn-basic" (click)="keywordChange($event)">
       <i class="ion-search"></i> 查詢
     </button>
     <button class="btn btn-sm btn-primary" (click)="CSearch($event)">

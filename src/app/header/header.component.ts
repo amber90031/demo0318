@@ -8,6 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() Inplaceholder;
   @Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchArticlesEvent: EventEmitter<string> = new EventEmitter<
+    string
+  >();
   keyword = '';
   isHighlight = false;
   FontSize = 24;
@@ -31,5 +34,9 @@ export class HeaderComponent implements OnInit {
   HighLight($event) {
     this.isHighlight = !this.isHighlight;
     ++this.FontSize;
+  }
+
+  keywordChange($event) {
+    this.searchArticlesEvent.emit(this.keyword);
   }
 }

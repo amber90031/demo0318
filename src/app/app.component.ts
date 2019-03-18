@@ -69,8 +69,19 @@ export class AppComponent {
       favoritesCount: 5
     }
   ];
+  newList = this.list;
 
   search($event) {
     alert('使用自訂Ouput方法傳遞子元件的參數[' + $event + ']到父元件');
+  }
+
+  searchArticles($event) {
+    if ($event) {
+      this.newList = this.list.filter(
+        item => item.title.indexOf($event) !== -1
+      );
+    } else {
+      this.newList = this.list;
+    }
   }
 }
