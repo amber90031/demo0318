@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() Inplaceholder;
   @Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
+  keyword = '';
 
   constructor() {}
 
@@ -19,5 +20,9 @@ export class HeaderComponent implements OnInit {
 
   OSearch($event) {
     this.searchEvent.emit(this.Inplaceholder);
+  }
+
+  onChange($event) {
+    alert('您輸入的關鍵字為：' + this.keyword);
   }
 }

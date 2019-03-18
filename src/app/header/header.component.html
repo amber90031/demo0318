@@ -5,6 +5,8 @@
       class="form-control form-control-sm search-input"
       type="text"
       placeholder="{{ Inplaceholder }}"
+      [(ngModel)]="keyword"
+      (ngModelChange)="onChange($event)"
     />
     <button class="btn btn-sm btn-primary" (click)="CSearch($event)">
       <i class="ion-search"></i> Click方法
@@ -12,5 +14,7 @@
     <button class="btn btn-sm btn-info" (click)="OSearch($event)">
       <i class="ion-search"></i> OutPut方法
     </button>
+    <br />
+    目前的輸入關鍵字為：{{ keyword }}
   </div>
 </nav>
