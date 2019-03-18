@@ -9,6 +9,8 @@ export class HeaderComponent implements OnInit {
   @Input() Inplaceholder;
   @Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
   keyword = '';
+  isHighlight = false;
+  FontSize = 24;
 
   constructor() {}
 
@@ -24,5 +26,10 @@ export class HeaderComponent implements OnInit {
 
   onChange($event) {
     alert('您輸入的關鍵字為：' + this.keyword);
+  }
+
+  HighLight($event) {
+    this.isHighlight = !this.isHighlight;
+    ++this.FontSize;
   }
 }

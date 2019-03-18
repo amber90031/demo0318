@@ -1,6 +1,12 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="index.html">conduit</a>
+    <a
+      class="navbar-brand"
+      href="index.html"
+      [ngClass]="{ highlight: isHighlight }"
+      [style.font-size.px]="FontSize"
+      >conduit</a
+    >
     <input
       class="form-control form-control-sm search-input"
       type="text"
@@ -8,11 +14,17 @@
       [(ngModel)]="keyword"
       (ngModelChange)="onChange($event)"
     />
+    <button class="btn btn-sm btn-basic">
+      <i class="ion-search"></i> 查詢
+    </button>
     <button class="btn btn-sm btn-primary" (click)="CSearch($event)">
       <i class="ion-search"></i> Click方法
     </button>
     <button class="btn btn-sm btn-info" (click)="OSearch($event)">
       <i class="ion-search"></i> OutPut方法
+    </button>
+    <button class="btn btn-sm btn-danger" (click)="HighLight($event)">
+      <i class="ion-search"></i> HighLight和放大
     </button>
     <br />
     目前的輸入關鍵字為：{{ keyword }}
