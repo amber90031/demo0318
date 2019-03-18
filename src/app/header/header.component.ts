@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() Inplaceholder;
+  @Output() searchEvent: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  search($event) {
-    alert('Click the search.');
+  CSearch($event) {
+    alert('使用Click事件觸發Function');
+  }
+
+  OSearch($event) {
+    this.searchEvent.emit(this.Inplaceholder);
   }
 }

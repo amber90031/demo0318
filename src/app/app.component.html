@@ -1,4 +1,7 @@
-<app-header [Inplaceholder]="'I am placeholder'"></app-header>
+<app-header
+  [Inplaceholder]="'I am placeholder'"
+  (searchEvent)="search($event)"
+></app-header>
 <div class="home-page">
   <div class="banner">
     <div class="container">
