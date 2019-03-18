@@ -11,4 +11,8 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  search($event) {
+    alert('Click the search.');
+  }
 }
